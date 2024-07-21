@@ -77,11 +77,11 @@ export default function NeedToBlowUp({ onConfirm, onBack }) {
                         </div>
                     ))}
                 </div>
-                <div className="navigate-button-container">
-                    <div className="navigate-button-background">
-                        <button className="navigate-button" onClick={onBack}>Back</button>
-                        <button className="navigate-button" onClick={handleConfirm}>Next</button>
-                    </div>
+            </div>
+            <div className="navigate-button-container">
+                <div className="navigate-button-background">
+                    <button className="navigate-button" onClick={onBack}>Back</button>
+                    <button className="navigate-button" onClick={handleConfirm}>Next</button>
                 </div>
             </div>
         </>

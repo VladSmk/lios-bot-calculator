@@ -82,34 +82,3 @@
     color: white;
 }
 
-.navigate-button-container {
-    position: fixed;
-    bottom: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-}
-
-.navigate-button-background {
-    background-color: white;
-    padding: 10px 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.navigate-button {
-    background-color: white;
-    color: #333;
-    border: 2px solid #333;
-    border-radius: 8px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.navigate-button:hover {
-    background-color: #333;
-    color: white;
-}
