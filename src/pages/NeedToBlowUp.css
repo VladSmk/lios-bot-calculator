@@ -8,11 +8,13 @@
 
 .items-grid {
     width: 80%; /* Adjust width based on sidebar width */
+    max-width: 600px; /* Max width to prevent stretching across the whole screen */
     margin-left: 20%; /* Move the grid to the right to make space for sidebar */
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two columns layout */
-    gap: 10px; /* Reduced gap for better spacing */
+    gap: 20px; /* Gap between items */
+    justify-content: center; /* Center the grid */
 }
 
 .item-container {
@@ -23,8 +25,8 @@
     font-size: 20px;
     text-align: center;
     cursor: pointer;
-    width: 150px;
-    height: 85px;
+    width: 120px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,7 +37,8 @@
 }
 
 .item-container.selected {
-    height: 100px;
+    height: 95px;
+    padding-bottom: 20px;
 }
 
 .item-content {
