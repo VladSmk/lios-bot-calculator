@@ -1,7 +1,9 @@
 export default function ResultPage() {
     return (
         <>
-            ResultPage
+            <h2>ResultPage</h2>
+
+
         </>
     )
 }
