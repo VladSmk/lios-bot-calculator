@@ -1,27 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import SelectExp from "./pages/SelectExp";
+import ResultPage from "./pages/ResultPage";
+import NeedToBlowUp from "./pages/NeedToBlowUp";
+import AuditPage from "./pages/AuditPage";
 
 function App() {
-  return (
-    <div className="App">
-      {/*<header className="App-header">*/}
-      {/*  <img src={logo} className="App-logo" alt="logo" />*/}
-      {/*  <p>*/}
-      {/*    Edit <code>src/App.js</code> and save to reload.*/}
-      {/*  </p>*/}
-      {/*  <a*/}
-      {/*    className="App-link"*/}
-      {/*    href="https://reactjs.org"*/}
-      {/*    target="_blank"*/}
-      {/*    rel="noopener noreferrer"*/}
-      {/*  >*/}
-      {/*    Learn React*/}
-      {/*  </a>*/}
-      {/*</header>*/}
-      Some Title
-      <img src="/img/other/iava.png" className="App-logo" alt="logo" />
-    </div>
-  );
+    const [page, setPage] = useState(1);
+
+    const handleClick = () => {
+        setPage(page%4+1);
+    };
+
+    return (
+        <>
+            {page===1 ? (
+                <SelectExp />
+            ) : page===2 ? (
+                <NeedToBlowUp />
+            ) : page===3 ? (
+                <ResultPage />
+            ) : (
+                <AuditPage />
+            )}
+
+            <button onClick={handleClick} >Button</button>
+        </>
+    );
 }
 
 export default App;
