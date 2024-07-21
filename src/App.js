@@ -6,24 +6,35 @@ import AuditPage from "./pages/AuditPage";
 import './App.css';
 
 function App() {
-    const [page, setPage] = useState(1);
+    const [pageNumber, setPageNumber] = useState(1);
+    const [selectedItems, setSelectedItems] = useState([]);
 
-    const handleClick = () => {
-        setPage(page % 4 + 1);
+    const handlePageChange = () => {
+        setPageNumber(pageNumber % 4 + 1);
+    };
+
+    const handleConfirm = (items) => {
+        setSelectedItems(items);
+        console.log('Selected items:', items);
+        setPageNumber(pageNumber % 4 + 1);
     };
 
     return (
         <div className="app-container">
-            {page === 1 ? (
-                <SelectExp />
-            ) : page === 2 ? (
+            {pageNumber === 1 ? (
+                <SelectExp onConfirm={handleConfirm} />
+            ) : pageNumber === 2 ? (
                 <NeedToBlowUp />
-            ) : page === 3 ? (
+            ) : pageNumber === 3 ? (
                 <ResultPage />
             ) : (
                 <AuditPage />
             )}
-            <button className="navigate-button" onClick={handleClick}>Next Page</button>
+            <div className="navigate-button-container">
+                <div className="navigate-button-background">
+                    <button className="navigate-button" onClick={handlePageChange}>Confirm</button>
+                </div>
+            </div>
         </div>
     );
 }

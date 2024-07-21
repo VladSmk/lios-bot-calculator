@@ -4,8 +4,26 @@
   align-items: center;
   background-color: #f0f0f0; /* Light gray background */
   height: 100vh;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 20px;
+  position: relative;
+}
+
+.navigate-button-container {
+  z-index: 1;
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigate-button-background {
+  background-color: white;
+  padding: 10px 30px; /* Adjusted padding to make button less wide */
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navigate-button {
@@ -13,9 +31,12 @@
   color: #333; /* Darker text for contrast */
   border: 2px solid #333;
   border-radius: 8px;
-  padding: 10px 20px;
+  padding: 10px 20px; /* Consistent padding for a well-proportioned button */
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
+  font-family: 'Calibri', sans-serif; /* Font style */
+  letter-spacing: 1px;
+  font-weight: 600;
 }
 
 .navigate-button:hover {

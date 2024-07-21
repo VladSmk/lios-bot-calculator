@@ -1,9 +1,12 @@
 import React from 'react';
 import './Explosive.css';
 
-const Explosive = ({ name, pathToImage }) => {
+const Explosive = ({ name, pathToImage, onClick, selected }) => {
     return (
-        <div className="explosive-item">
+        <div
+            className={`explosive-item ${selected ? 'selected' : ''}`}
+            onClick={onClick}
+        >
             <img src={process.env.PUBLIC_URL + "/img/exp/" + pathToImage} alt={name} />
             <div className="explosive-name">{name}</div>
         </div>
