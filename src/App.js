@@ -10,11 +10,13 @@ function App() {
     const [selectedItems, setSelectedItems] = useState([]);
 
     const previousPage = () => {
-        setPageNumber(pageNumber>1 ? pageNumber - 1 : pageNumber);
+        setPageNumber(pageNumber > 1 ? pageNumber - 1 : pageNumber);
     };
+
     const nextPage = () => {
-        setPageNumber(pageNumber<4 ? pageNumber + 1 : pageNumber);
+        setPageNumber(pageNumber < 4 ? pageNumber + 1 : pageNumber);
     };
+
     const newTry = () => {
         setPageNumber(1);
     };
@@ -22,7 +24,7 @@ function App() {
     const handleConfirm = (items) => {
         setSelectedItems(items);
         console.log('Selected items:', items);
-        setPageNumber(pageNumber % 4 + 1);
+        nextPage();
     };
 
     return (
@@ -30,13 +32,13 @@ function App() {
             {pageNumber === 1 ? (
                 <SelectExp onConfirm={handleConfirm} />
             ) : pageNumber === 2 ? (
-                <NeedToBlowUp />
+                <NeedToBlowUp onConfirm={handleConfirm} onBack={previousPage} />
             ) : pageNumber === 3 ? (
                 <ResultPage />
             ) : (
                 <AuditPage />
             )}
-            {(pageNumber === 2 || pageNumber === 3) && (
+            {pageNumber === 3 && (
                 <div className="navigate-button-container">
                     <div className="navigate-button-background">
                         <button className="navigate-button" onClick={previousPage}>Back</button>
@@ -51,9 +53,10 @@ function App() {
                     </div>
                 </div>
             )}
-
         </div>
     );
 }
 
 export default App;
+
+

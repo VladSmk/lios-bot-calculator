@@ -1,0 +1,34 @@
+.sidebar-container {
+    width: 25%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.categories {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.category {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.category.selected {
+    background-color: #f0f0f0;
+    border-color: #bbb;
+}
+
+.category:hover {
+    background-color: #e0e0e0;
+}
