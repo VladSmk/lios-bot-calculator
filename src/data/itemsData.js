@@ -35,5 +35,5 @@ export const device = [
     "auto cannon", // 7.62
     "automatic rifle device", // 5...
     "rocket turret",
-    "electromagnetic turret"
+    "electro turret"
 ];
