@@ -43,15 +43,16 @@ export default function NeedToBlowUp({ onConfirm, onBack }) {
     };
 
     return (
-        <div className="need-to-blow-up-container">
-            <Sidebar
-                categories={categories}
-                onSelect={handleCategorySelect}
-                selectedCategory={selectedCategory}
-            />
-            <div className="items-grid">
-                {selectedCategory && categories[selectedCategory].map((item, index) => (
-                    <>
+        <>
+            <h2>Choose what you need to blow up</h2>
+            <div className="need-to-blow-up-container">
+                <Sidebar
+                    categories={categories}
+                    onSelect={handleCategorySelect}
+                    selectedCategory={selectedCategory}
+                />
+                <div className="items-grid">
+                    {selectedCategory && categories[selectedCategory].map((item, index) => (
                         <div key={index}
                              className={`item-container ${selectedItems[`${selectedCategory}-${item}`] ? 'selected' : ''}`}
                              onClick={() => handleItemClick(`${selectedCategory}-${item}`)}>
@@ -74,15 +75,15 @@ export default function NeedToBlowUp({ onConfirm, onBack }) {
                                 </div>
                             )}
                         </div>
-                    </>
-                ))}
-            </div>
-            <div className="navigate-button-container">
-                <div className="navigate-button-background">
-                    <button className="navigate-button" onClick={onBack}>Back</button>
-                    <button className="navigate-button" onClick={handleConfirm}>Next</button>
+                    ))}
+                </div>
+                <div className="navigate-button-container">
+                    <div className="navigate-button-background">
+                        <button className="navigate-button" onClick={onBack}>Back</button>
+                        <button className="navigate-button" onClick={handleConfirm}>Next</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
