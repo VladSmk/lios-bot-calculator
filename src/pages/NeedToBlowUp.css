@@ -16,46 +16,56 @@
 
 .item-container {
     position: relative;
-}
-
-.item {
-    padding: 10px;
     background-color: #e0e0e0;
     border: 1px solid #aaa;
     border-radius: 5px;
     text-align: center;
     cursor: pointer;
-    height: 50px; /* Smaller height for the items */
+    width: 150px; /* Square size */
+    height: 120px; /* Square size */
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    flex-direction: column;
+    transition: height 0.3s ease;
+    padding-bottom: 40px; /* Space for the quantity controls */
 }
 
-.item.selected {
-    background-color: #c0c0c0;
-    border-color: #888;
+.item-container.selected {
+    height: 120px; /* Reduced height when selected */
+}
+
+.item-content {
+    flex-grow: 1; /* Ensure content takes up available space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .item-quantity {
     position: absolute;
-    bottom: 5px;
-    right: 5px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+    border-top: 1px solid #aaa;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 5px;
+    padding: 5px 0;
+    box-sizing: border-box;
 }
 
-.item-quantity button {
-    background-color: #fff;
+.quantity-button {
+    background-color: #f0f0f0;
     border: 1px solid #ccc;
     border-radius: 3px;
     cursor: pointer;
     padding: 2px 5px;
-}
-
-.item-quantity span {
-    font-weight: bold;
 }
 
 .sidebar-container {

@@ -51,27 +51,30 @@ export default function NeedToBlowUp({ onConfirm, onBack }) {
             />
             <div className="items-grid">
                 {selectedCategory && categories[selectedCategory].map((item, index) => (
-                    <div key={index} className="item-container">
-                        <div
-                            className={`item ${selectedItems[`${selectedCategory}-${item}`] ? 'selected' : ''}`}
-                            onClick={() => handleItemClick(`${selectedCategory}-${item}`)}
-                        >
-                            {item}
+                    <>
+                        <div key={index}
+                             className={`item-container ${selectedItems[`${selectedCategory}-${item}`] ? 'selected' : ''}`}
+                             onClick={() => handleItemClick(`${selectedCategory}-${item}`)}>
+                            <div className="item-content">
+                                {item}
+                            </div>
                             {selectedItems[`${selectedCategory}-${item}`] && (
                                 <div className="item-quantity">
-                                    <button onClick={(e) => {
+                                    <button className="quantity-button" onClick={(e) => {
                                         e.stopPropagation();
                                         handleItemDecrease(`${selectedCategory}-${item}`);
-                                    }}>-</button>
+                                    }}>-
+                                    </button>
                                     <span>{selectedItems[`${selectedCategory}-${item}`]}</span>
-                                    <button onClick={(e) => {
+                                    <button className="quantity-button" onClick={(e) => {
                                         e.stopPropagation();
                                         handleItemClick(`${selectedCategory}-${item}`);
-                                    }}>+</button>
+                                    }}>+
+                                    </button>
                                 </div>
                             )}
                         </div>
-                    </div>
+                    </>
                 ))}
             </div>
             <div className="navigate-button-container">
