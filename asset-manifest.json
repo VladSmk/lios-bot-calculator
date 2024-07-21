@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/lios-bot-calculator/static/css/main.caa7c882.css",
-    "main.js": "/lios-bot-calculator/static/js/main.e91ed136.js",
+    "main.css": "/lios-bot-calculator/static/css/main.851dbc38.css",
+    "main.js": "/lios-bot-calculator/static/js/main.52c7d4a4.js",
     "index.html": "/lios-bot-calculator/index.html",
-    "main.caa7c882.css.map": "/lios-bot-calculator/static/css/main.caa7c882.css.map",
-    "main.e91ed136.js.map": "/lios-bot-calculator/static/js/main.e91ed136.js.map"
+    "main.851dbc38.css.map": "/lios-bot-calculator/static/css/main.851dbc38.css.map",
+    "main.52c7d4a4.js.map": "/lios-bot-calculator/static/js/main.52c7d4a4.js.map"
   },
   "entrypoints": [
-    "static/css/main.caa7c882.css",
-    "static/js/main.e91ed136.js"
+    "static/css/main.851dbc38.css",
+    "static/js/main.52c7d4a4.js"
   ]
 }
