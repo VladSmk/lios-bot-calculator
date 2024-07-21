@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import SelectExp from "./pages/SelectExp";
-import ResultPage from "./pages/ResultPage";
 import NeedToBlowUp from "./pages/NeedToBlowUp";
+import ResultPage from "./pages/ResultPage";
 import AuditPage from "./pages/AuditPage";
 import './App.css';
 
 function App() {
     const [pageNumber, setPageNumber] = useState(1);
+    const [selectedExplosives, setSelectedExplosives] = useState([]);
     const [selectedItems, setSelectedItems] = useState([]);
 
     const previousPage = () => {
@@ -19,24 +20,30 @@ function App() {
 
     const newTry = () => {
         setPageNumber(1);
+        setSelectedExplosives([]);
+        setSelectedItems([]);
     };
 
-    const handleConfirm = (items) => {
+    const handleConfirmExplosives = (items) => {
+        setSelectedExplosives(items);
+        nextPage();
+    };
+
+    const handleConfirmItems = (items) => {
         setSelectedItems(items);
-        console.log('Selected items:', items);
         nextPage();
     };
 
     return (
         <div className="app-container">
             {pageNumber === 1 ? (
-                <SelectExp onConfirm={handleConfirm} />
+                <SelectExp onConfirm={handleConfirmExplosives} />
             ) : pageNumber === 2 ? (
-                <NeedToBlowUp onConfirm={handleConfirm} onBack={previousPage} />
+                <NeedToBlowUp onConfirm={handleConfirmItems} onBack={previousPage} />
             ) : pageNumber === 3 ? (
-                <ResultPage />
+                <ResultPage selectedExplosives={selectedExplosives} selectedItems={selectedItems} />
             ) : (
-                <AuditPage />
+                <AuditPage selectedExplosives={selectedExplosives} selectedItems={selectedItems} />
             )}
             {pageNumber === 3 && (
                 <div className="navigate-button-container">
@@ -58,5 +65,3 @@ function App() {
 }
 
 export default App;
-
-

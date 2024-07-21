@@ -1,12 +1,12 @@
 .sidebar-container {
-    width: 18%;
+    width: 20%;
     position: fixed;
-    right: 0;
-    top: 25%;
-    height: 37%;
-    bottom: 0;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: auto;
     background-color: #fff;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     padding: 10px;
     overflow-y: auto;
     border-top-right-radius: 20px;

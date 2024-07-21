@@ -3,15 +3,16 @@
     width: 100%;
     height: 100%;
     padding-top: 10px; /* Space for the top sidebar */
+    box-sizing: border-box; /* Ensure padding is included in total width/height */
 }
 
 .items-grid {
-    width: 82%;
-    margin: 0 0 0 25%;
+    width: 80%; /* Adjust width based on sidebar width */
+    margin-left: 20%; /* Move the grid to the right to make space for sidebar */
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+    gap: 10px; /* Reduced gap for better spacing */
 }
 
 .item-container {
@@ -30,6 +31,7 @@
     flex-direction: column;
     transition: height 0.3s ease;
     padding-bottom: 4px;
+    overflow: hidden; /* Prevent text overflow */
 }
 
 .item-container.selected {
@@ -37,10 +39,14 @@
 }
 
 .item-content {
-    flex-grow: 1; /* Ensure content takes up available space */
+    flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 5px; /* Add padding for better text readability */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Prevent overflow */
+    text-overflow: ellipsis; /* Add ellipsis for long text */
 }
 
 .item-quantity {
@@ -65,18 +71,12 @@
     cursor: pointer;
     margin: 0 5px;
     padding: 5px 15px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.sidebar-container {
-    width: 25%;
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100%;
-    background-color: #fff;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    overflow-y: auto;
+.quantity-button:hover {
+    background-color: #333;
+    color: white;
 }
 
 .navigate-button-container {
