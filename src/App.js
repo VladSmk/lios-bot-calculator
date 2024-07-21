@@ -9,8 +9,14 @@ function App() {
     const [pageNumber, setPageNumber] = useState(1);
     const [selectedItems, setSelectedItems] = useState([]);
 
-    const handlePageChange = () => {
-        setPageNumber(pageNumber % 4 + 1);
+    const previousPage = () => {
+        setPageNumber(pageNumber>1 ? pageNumber - 1 : pageNumber);
+    };
+    const nextPage = () => {
+        setPageNumber(pageNumber<4 ? pageNumber + 1 : pageNumber);
+    };
+    const newTry = () => {
+        setPageNumber(1);
     };
 
     const handleConfirm = (items) => {
@@ -30,11 +36,22 @@ function App() {
             ) : (
                 <AuditPage />
             )}
-            <div className="navigate-button-container">
-                <div className="navigate-button-background">
-                    <button className="navigate-button" onClick={handlePageChange}>Confirm</button>
+            {(pageNumber === 2 || pageNumber === 3) && (
+                <div className="navigate-button-container">
+                    <div className="navigate-button-background">
+                        <button className="navigate-button" onClick={previousPage}>Back</button>
+                        <button className="navigate-button" onClick={nextPage}>Next</button>
+                    </div>
                 </div>
-            </div>
+            )}
+            {pageNumber === 4 && (
+                <div className="navigate-button-container">
+                    <div className="navigate-button-background">
+                        <button className="navigate-button" style={{width: '130px'}} onClick={newTry}>Try again</button>
+                    </div>
+                </div>
+            )}
+
         </div>
     );
 }
