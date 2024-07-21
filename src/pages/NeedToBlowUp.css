@@ -13,7 +13,7 @@
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two columns layout */
-    gap: 20px; /* Gap between items */
+    gap: 10px; /* Gap between items */
     justify-content: center; /* Center the grid */
 }
 
@@ -25,7 +25,7 @@
     font-size: 20px;
     text-align: center;
     cursor: pointer;
-    width: 120px;
+    width: 115px;
     height: 80px;
     display: flex;
     align-items: center;
@@ -47,10 +47,13 @@
     align-items: center;
     justify-content: center;
     padding: 5px; /* Add padding for better text readability */
-    white-space: nowrap; /* Prevent text wrapping */
+    white-space: normal; /* Allow text wrapping */
     overflow: hidden; /* Prevent overflow */
     text-overflow: ellipsis; /* Add ellipsis for long text */
+    word-wrap: break-word; /* Ensure long words break */
+    text-align: center; /* Center align text */
 }
+
 
 .item-quantity {
     position: absolute;
