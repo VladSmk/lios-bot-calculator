@@ -21,7 +21,7 @@
 
 .navigate-button-background {
   background-color: white;
-  padding: 10px 30px; /* Adjusted padding to make button less wide */
+  padding: 10px 55%; /* Adjusted padding to make button less wide */
   border-radius: 12px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
