@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import './AuditPage.css';
 import { explosives, sulfurPerOne, woodDoor, stoneDoor, ironDoor, steelDoor, titaniumDoor, garageDoor,
     woodWall, stoneWall, ironWall, steelWall, titaniumWall,
     woodBase, stoneBase, ironBase, steelBase, titaniumBase,
@@ -14,20 +15,20 @@ export default function AuditPage({ selectedExplosives, selectedItems }) {
     useEffect(() => {
         amountOfSulfur = 0;
         selectedItems.forEach((item, index) => {
-            console.log("log1: item: " + item);
+            // console.log("log1: item: " + item);
             const bestExp = findTheBestExplosives(item);
-            console.log("log2: findTheBestExplosives(item): " + findTheBestExplosives(item));
+            // console.log("log2: findTheBestExplosives(item): " + findTheBestExplosives(item));
             const countOfTheBestExp = findTheNecessaryExplosives(item, bestExp);
-            console.log("log3: countOfTheBestExp(item): " + findTheNecessaryExplosives(item, bestExp));
+            // console.log("log3: countOfTheBestExp(item): " + findTheNecessaryExplosives(item, bestExp));
             amountOfSulfur+=getNumberPart(item)*getSulfurByExplosive(bestExp)*countOfTheBestExp;
-            console.log("all: " + getNumberPart(item)*getSulfurByExplosive(bestExp)*countOfTheBestExp);
-            console.log("log4: getNumberPart(item): " + getNumberPart(item));
-            console.log("log5: getSulfurByExplosive(bestExp): " + getSulfurByExplosive(bestExp));
-            console.log("log6: amountOfSulfur: " + amountOfSulfur);
-            console.log("next");
-            console.log("next");
-            console.log("next");
-            console.log("next");
+            // console.log("all: " + getNumberPart(item)*getSulfurByExplosive(bestExp)*countOfTheBestExp);
+            // console.log("log4: getNumberPart(item): " + getNumberPart(item));
+            // console.log("log5: getSulfurByExplosive(bestExp): " + getSulfurByExplosive(bestExp));
+            // console.log("log6: amountOfSulfur: " + amountOfSulfur);
+            // console.log("next");
+            // console.log("next");
+            // console.log("next");
+            // console.log("next");
             setSulfur(amountOfSulfur);
             list[index] = item + ': ' + findTheNecessaryExplosives(item, bestExp)*getNumberPart(item) + ' ' + findTheBestExplosives(item);
         })
@@ -231,17 +232,17 @@ export default function AuditPage({ selectedExplosives, selectedItems }) {
 
     return (
         <>
-            <h2>AuditPage</h2>
-            <div>
-                <ul>
+            <h2 className="audit-header">AuditPage</h2>
+            <div className="audit-container">
+                <ul className="audit-list">
                     {list.map((item, index) => (
-                        <>
-                            <li key={index}>{item}</li>
-                        </>
+                        <li key={index} className="audit-list-item">{item}</li>
                     ))}
                 </ul>
             </div>
-            sulfur: {sulfur}
+            <div className="sulfur-info">
+                sulfur: {sulfur}
+            </div>
         </>
     );
 }
