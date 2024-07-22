@@ -30,10 +30,11 @@ export const titanium = [
     "alloy barrier"
 ];
 export const device = [
+    "garage door",
     "vending machine",
     "shotgun trap",
     "auto cannon", // 7.62
     "automatic rifle device", // 5...
     "rocket turret",
-    "electro turret"
+    "tesla turret"
 ];
